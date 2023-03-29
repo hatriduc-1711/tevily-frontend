@@ -1,0 +1,181 @@
+.wrapper-element-paris {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-image: url(https://gaviaspreview.com/wp/tevily/wp-content/uploads/2021/10/bg-line-bird.png);
+    background-position: 75% 10px;
+    background-repeat: no-repeat;
+
+    .element-paris-container {
+        width: 100%;
+        min-height: 525px;
+        padding: 0 var(--padding-row);
+
+        .wrapper-banner {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transition: all 5s linear;
+            }
+
+            &:hover img {
+                transform: scale(1.15);
+            }
+
+            .discount-container {
+                position: absolute;
+                top: 65px;
+                right: 5px;
+
+                h3 {
+                    font-family: reey;
+                    font-size: 5rem;
+                    font-weight: normal;
+                    line-height: 5rem;
+                    color: var(--outstanding-color);
+                }
+
+                h4 {
+                    font-size: 3.3rem;
+                    line-height: 2.8rem;
+                    font-weight: 600;
+                    color: var(--title-color);
+                }
+            }
+
+            .phone-container {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                top: 50%;
+                left: 13px;
+                width: 185px;
+                height: 70px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+
+                span {
+                    font-size: 0.7rem;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: #757783;
+                    margin-bottom: 2px;
+                }
+
+                h4 {
+                    font-size: 1.1rem;
+                    color: var(--title-color);
+                }
+            }
+        }
+
+        .section-content {
+            padding: 0 5px;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.9rem;
+                color: #757783;
+                margin-top: 35px;
+            }
+
+            .list-content {
+                margin-top: 25px;
+                margin-bottom: 30px;
+
+                .item-content {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: var(--primary);
+                    padding: 10px 0;
+
+                    .icon-check {
+                        font-size: 0.9rem;
+                        color: var(--outstanding-color);
+                        margin-right: 13px;
+                    }
+                }
+            }
+
+            .btn-book-tour {
+                width: 210px;
+                height: 52px;
+                border-radius: 8px;
+
+                span {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+// -------------responsive--------------
+@media screen and (max-width: 63.9375em) {
+    .wrapper-element-paris {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .element-paris-container {
+            .wrapper-banner {
+                margin-bottom: 15px;
+
+                .discount-container {
+                    top: 100px;
+
+                    h3 {
+                        font-size: 3.5rem;
+                        line-height: 2.3rem;
+                    }
+
+                    h4 {
+                        font-size: 2.2rem;
+                    }
+                }
+
+                .phone-container {
+                    width: 150px;
+                    height: 50px;
+
+                    span {
+                        font-size: 0.6rem;
+                    }
+
+                    h4 {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-element-paris {
+        .element-paris-container {
+            .wrapper-banner {
+                .discount-container {
+                    top: 75px;
+                }
+            }
+        }
+    }
+}

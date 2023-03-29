@@ -1,0 +1,80 @@
+.wrapper-slider {
+    width: 100%;
+    height: 264px;
+    background-image: url(https://gaviaspreview.com/wp/tevily/wp-content/uploads/2021/10/breadcrumb.jpg);
+    background-color: #313041;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .slider-container {
+        position: relative;
+        height: 264px;
+        padding: 0 var(--padding-row);
+
+        .name-page {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .breadcrumb {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            bottom: 0;
+            right: var(--padding-row);
+            font-size: 1rem;
+            line-height: 1rem;
+            font-weight: 600;
+            background-color: #fff;
+            padding: 25px 25px 22px;
+            border-radius: 10px 10px 0 0;
+
+            a {
+                color: var(--primary);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .page-active {
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                color: var(--outstanding-color);
+
+                .icon-slash {
+                    color: #c2c1c1;
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-slider {
+        height: 152px;
+
+        .slider-container {
+            height: 152px;
+
+            .name-page {
+                font-size: 1.6rem;
+            }
+
+            .breadcrumb {
+                display: none;
+            }
+        }
+    }
+}

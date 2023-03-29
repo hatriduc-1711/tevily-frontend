@@ -1,0 +1,115 @@
+.wrapper-element-phone {
+    background-color: #faf5ee;
+    background-image: url(https://gaviaspreview.com/wp/tevily/wp-content/uploads/2021/11/bg-line-2.png);
+    background-position: top left;
+    background-repeat: repeat;
+    padding-top: 120px;
+
+    .element-phone-container {
+        padding: 0 var(--padding-row);
+
+        .container-first {
+            p {
+                font-size: 1rem;
+                line-height: 1.9rem;
+                color: #757783;
+                margin-top: 15px;
+                margin-bottom: 30px;
+            }
+
+            .group-btn {
+                display: flex;
+                align-items: center;
+                margin-bottom: 95px;
+
+                .btn-login,
+                .btn-register {
+                    height: 50px;
+                    width: 140px;
+                    border-radius: 4px;
+
+                    div {
+                        font-size: 0.75rem;
+                    }
+
+                    span {
+                        font-size: 0.7rem;
+                        letter-spacing: 2px;
+                        margin-left: 7px;
+                    }
+
+                    &:hover {
+                        transform: scale(0.9);
+                    }
+                }
+
+                .btn-login {
+                    background-color: #fc3c3c;
+
+                    div,
+                    span {
+                        color: #fff;
+                    }
+                }
+
+                .btn-register {
+                    background-color: #fff;
+
+                    div,
+                    span {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+
+        .container-last {
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            height: 100%;
+            margin-left: 30px;
+        }
+    }
+}
+
+// ---------------responsive---------------
+@media screen and (max-width: 63.9375em) {
+    .wrapper-element-phone {
+        padding-top: 70px;
+
+        .container-first {
+            .group-btn {
+                margin-bottom: 45px !important;
+            }
+        }
+
+        .element-phone-container {
+            .container-last {
+                margin-left: 0;
+                img {
+                    width: 100%;
+                    height: 85%;
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-element-phone {
+        .element-phone-container {
+            .container-last {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+.wrapper-destination {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 270px;
+    background-color: var(--outstanding-color);
+    border-radius: 8px;
+    overflow: hidden;
+
+    p {
+        position: absolute;
+        left: 30px;
+        top: 25%;
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #fff;
+        text-transform: uppercase;
+        word-spacing: 2px;
+    }
+
+    .title {
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        font-family: reey;
+        font-size: 1.8rem;
+        font-weight: normal;
+        color: #fff;
+        transform: translateY(-45%);
+    }
+
+    .btn {
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        width: 150px;
+        height: 50px;
+        background-color: #fff;
+
+        span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+    .background-destination {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 6s linear;
+    }
+
+    &:hover .background-destination {
+        transform: scale(1.2);
+    }
+
+    .number-tours {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 94px;
+        height: 30px;
+        font-size: 0.69rem;
+        line-height: 1rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #fff;
+        background-color: var(--outstanding-color);
+        border-radius: 8px;
+    }
+
+    .name-destination {
+        position: absolute;
+        bottom: 25px;
+        left: 30px;
+
+        .sub-title {
+            font-family: reey;
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: var(--outstanding-color);
+        }
+
+        .name {
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: #fff;
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .wrapper-destination {
+        p {
+            left: 20px;
+        }
+
+        .title {
+            left: 40px;
+            font-size: 1.6rem;
+        }
+
+        .btn {
+            left: 20px;
+            bottom: 20px;
+            width: 130px;
+            height: 45px;
+        }
+
+        .name-destination {
+            bottom: 20px;
+            left: 15px;
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-destination {
+        height: 300px;
+    }
+}

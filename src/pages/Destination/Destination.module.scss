@@ -1,0 +1,112 @@
+.wrapper-detail {
+    background-color: #fbf6f2;
+    padding: 120px 0;
+
+    .detail-container {
+        padding: 0 var(--padding-row);
+
+        .image {
+            width: 100%;
+            height: 540px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+            }
+        }
+
+        .info-container {
+            .name-destination {
+                position: relative;
+                font-size: 2.2rem;
+                color: var(--primary);
+                margin-top: 30px;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: -10px;
+                    width: 60px;
+                    height: 2px;
+                    background-color: var(--outstanding-color);
+                    border-radius: 10px;
+                }
+            }
+
+            .text {
+                font-size: 1rem;
+                line-height: 1.9rem;
+                color: #757783;
+                margin: 30px 0;
+            }
+
+            .list-info {
+                .info-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 18px 0;
+                    border-bottom: 1px solid #bdbdbd88;
+
+                    h4 {
+                        color: #303030;
+                        min-width: 180px;
+                    }
+
+                    p {
+                        color: #757783;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tours-outstanding {
+    padding: 120px 0;
+
+    .tours-outstanding-container {
+        padding: 0 var(--padding-row);
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .wrapper-detail,
+    .tours-outstanding {
+        padding: 70px 0;
+    }
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-detail,
+    .tours-outstanding {
+        padding: 50px 0;
+
+        .detail-container {
+            .image {
+                height: 350px;
+                padding: 15px;
+
+                img {
+                    border-radius: 5px;
+                }
+            }
+
+            .list-info {
+                .info-item {
+                    align-items: start !important;
+                }
+            }
+        }
+    }
+}

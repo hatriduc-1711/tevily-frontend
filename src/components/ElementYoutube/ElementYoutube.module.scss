@@ -1,0 +1,221 @@
+.wrapper-element-youtube {
+    width: 100%;
+    background-image: url(https://gaviaspreview.com/wp/tevily/wp-content/uploads/2021/09/bg-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 120px 0;
+
+    .element-youtube-container {
+        padding: 0 var(--padding-row);
+
+        .section-first-child {
+            .logo-youtube-link {
+                position: relative;
+                display: flex;
+                width: 92px;
+                height: 92px;
+                background-color: var(--outstanding-color);
+                border-radius: 8px;
+                margin-left: 30px;
+                margin-bottom: 38px;
+                transition: all 0.1s linear;
+                cursor: pointer;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: '';
+                    right: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    border: 1px solid #fff;
+                    opacity: 0;
+                    border-radius: 8px;
+                    animation: pulse-border-2 1.5s linear infinite;
+                }
+
+                &::after {
+                    animation: pulse-border 1s linear infinite;
+                }
+
+                @keyframes pulse-border {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: scale(1.5);
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes pulse-border-2 {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: scale(1.8);
+                        opacity: 0;
+                    }
+                }
+
+                .logo-youtube {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    font-size: 2.6rem;
+                    color: #fff;
+                }
+
+                &:hover {
+                    transform: scale(0.9);
+                }
+            }
+
+            .title {
+                h4 {
+                    font-size: 1.85rem;
+                }
+
+                h2 {
+                    color: #fff;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .wrapper-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 216px;
+            background-color: transparent;
+            border-radius: 8px;
+            border: 1px solid #9a9a9a8a;
+            overflow: hidden;
+
+            .background-item {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background-color: var(--outstanding-color);
+                transition: all 0.2s linear;
+            }
+
+            .item-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                z-index: 10;
+
+                .icon {
+                    width: 90px;
+                    height: 90px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.1s linear;
+                    }
+                }
+
+                .title {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #fff;
+                    padding-top: 10px;
+                }
+            }
+
+            &:hover {
+                border-color: var(--outstanding-color);
+
+                .background-item {
+                    height: 100%;
+                }
+
+                .item-content {
+                    .icon {
+                        animation: scale 2s ease-in-out infinite;
+                        img {
+                            filter: brightness(200%) contrast(500%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+// -------------responsive------------
+@media screen and (max-width: 63.9375em) {
+    .wrapper-element-youtube {
+        padding: 70px 0;
+    }
+}
+
+// tablet
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .wrapper-element-youtube {
+        .element-youtube-container {
+            .section-first-child {
+                .title {
+                    h4 {
+                        font-size: 1.35rem;
+                    }
+
+                    h2 {
+                        font-size: 2.5rem;
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width: 46.1875em) {
+    .wrapper-element-youtube {
+        .element-youtube-container {
+            .section-first-child {
+                .title {
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+
+                    h2 {
+                        font-size: 2rem;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(107, 189, 66);
+    padding: 0 5rem;
+    margin-bottom: 5rem;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: block;
+        }
+
+        .logo {
+            height: 2.3rem;
+            margin-right: 4rem;
+        }
+
+        .navLink {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--title-color);
+            transition: all 0.2s linear;
+
+            + .navLink {
+                margin-left: 3rem;
+            }
+
+            &:hover {
+                color: var(--outstanding-color);
+            }
+        }
+
+        .active {
+            color: var(--outstanding-color);
+        }
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: var(--title-color);
+        transition: all 0.2s linear;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--outstanding-color);
+        }
+    }
+}
