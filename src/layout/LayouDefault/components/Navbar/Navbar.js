@@ -8,13 +8,14 @@ import { HiOutlineUser, HiUserPlus } from 'react-icons/hi2';
 import { IoIosLogOut } from 'react-icons/io';
 import { FiMenu, FiChevronRight } from 'react-icons/fi';
 import { CgCloseO } from 'react-icons/cg';
+import { getAuth } from 'firebase/auth';
 
 import styles from './Navbar.module.scss';
 import images from '~/assets/images';
 import config from '~/config';
 import NavItem from './NavItem';
 import { loginSelector } from '~/redux/selectors';
-import { logOut } from '~/services/authService';
+import { login } from '~/redux/authSlice/loginSlice';
 
 const cx = classNames.bind(styles);
 
@@ -22,15 +23,19 @@ function Navbar() {
     const [search, setSearch] = useState(false);
     const [account, setAccount] = useState(true);
     const [openNavMb, setOpenNavMb] = useState(false);
-    const login = useSelector(loginSelector);
+    const signIn = useSelector(loginSelector);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const searchRef = useRef();
     const infoRef = useRef();
+    const auth = getAuth();
 
     const handleLogOut = () => {
-        logOut(dispatch, navigate, login.accessToken);
+        auth.signOut();
+        localStorage.clear();
+        dispatch(login(null));
+        navigate('/login');
     };
 
     useEffect(() => {
@@ -99,7 +104,7 @@ function Navbar() {
                                 <VscAccount className={cx('icon-user')} />
                             </div>
                             <div className={cx('wrapper-option', { account: account })}>
-                                {login === null && (
+                                {signIn === null && (
                                     <ul className={cx('list-option')}>
                                         <li className={cx('item-option')}>
                                             <Link to={config.routes.login}>
@@ -115,7 +120,7 @@ function Navbar() {
                                         </li>
                                     </ul>
                                 )}
-                                {login?.code === 0 && (
+                                {signIn?.code === 0 && (
                                     <ul className={cx('list-option')}>
                                         <li className={cx('item-option')}>
                                             <div onClick={handleLogOut}>

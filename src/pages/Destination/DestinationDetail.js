@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useLayoutEffect, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import styles from './Destination.module.scss';
 import Slider from '~/components/Slider';
@@ -14,6 +14,7 @@ import { getDestination } from '~/services/destinationService';
 const cx = classNames.bind(styles);
 
 function DestinationDetail() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const destination = useSelector(destinationSelector);
     const params = useParams();
@@ -23,7 +24,9 @@ function DestinationDetail() {
     }, [destination]);
 
     useEffect(() => {
+        if (!localStorage.getItem('accessToken')) navigate('/login');
         getDestination(params.slug, dispatch);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params, dispatch]);
 
     useLayoutEffect(() => {

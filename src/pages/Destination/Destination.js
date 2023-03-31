@@ -28,8 +28,8 @@ function Destination() {
             <Destinations>
                 {listDestinations?.map((destination) => (
                     <DestinationItem
-                        key={destination._id}
                         to={`${config.routes.destinationDetail}/${destination.slug}`}
+                        key={destination._id}
                         img={destination.image}
                         tours={destination.tourNumber}
                         name={destination.name}

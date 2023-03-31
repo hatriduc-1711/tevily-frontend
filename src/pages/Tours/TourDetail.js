@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { FiMapPin } from 'react-icons/fi';
 import { IoPricetagsOutline, IoArrowRedoSharp } from 'react-icons/io5';
@@ -43,6 +43,7 @@ function TourDetail() {
     const videoRef = useRef();
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const tour = useSelector(tourSelector);
     const params = useParams();
 
@@ -51,7 +52,9 @@ function TourDetail() {
     }, [tour]);
 
     useEffect(() => {
+        if (!localStorage.getItem('accessToken')) navigate('/login');
         getTours(params.slug, dispatch);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params, dispatch]);
 
     const handleClose = () => {

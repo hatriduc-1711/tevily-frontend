@@ -2,6 +2,7 @@ import styles from './FormLogin.module.scss';
 import Button from '~/components/Button';
 import { register } from '~/redux/authSlice/registerSlice';
 import config from '~/config';
+import { login } from '~/redux/authSlice/loginSlice';
 
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const cx = classNames.bind(styles);
 
@@ -70,6 +72,30 @@ function FormLogin({ signUp, setValue, messageSelector, path }) {
                 break;
             default:
         }
+    };
+
+    const auth = getAuth();
+
+    const handleLoginGoogle = async (e) => {
+        e.preventDefault();
+        const googleProvider = new GoogleAuthProvider();
+        const {
+            user: { uid, accessToken },
+        } = await signInWithPopup(auth, googleProvider);
+        if (accessToken) localStorage.setItem('accessToken', accessToken);
+        dispatch(login({ code: 0, accessToken: accessToken }));
+        if (uid) navigate('/');
+    };
+
+    const handleLoginFacebook = async (e) => {
+        e.preventDefault();
+        const googleProvider = new FacebookAuthProvider();
+        const {
+            user: { uid, accessToken },
+        } = await signInWithPopup(auth, googleProvider);
+        if (accessToken) localStorage.setItem('accessToken', accessToken);
+        dispatch(login({ code: 0, accessToken: accessToken }));
+        if (uid) navigate('/');
     };
 
     const handleOnClick = (e) => {
@@ -203,11 +229,16 @@ function FormLogin({ signUp, setValue, messageSelector, path }) {
                         )}
                     </div>
                     <div className={cx('option-two')}>
-                        <Button border className={cx('btn')} icon={<FcGoogle />}>
-                            continue with google
+                        <Button onClick={(e) => handleLoginGoogle(e)} border className={cx('btn')} icon={<FcGoogle />}>
+                            Login with google
                         </Button>
-                        <Button border className={cx('btn')} icon={<FaFacebookSquare />}>
-                            continue with google
+                        <Button
+                            onClick={(e) => handleLoginFacebook(e)}
+                            border
+                            className={cx('btn')}
+                            icon={<FaFacebookSquare />}
+                        >
+                            Login with facebook
                         </Button>
                     </div>
                 </form>

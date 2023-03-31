@@ -6,17 +6,19 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from '~/redux/store';
+// import { persistor } from '~/redux/store';
 import GlobalStyles from '~/components/GlobalStyles';
+import '~/firebase/config.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <React.StrictMode>
     <Provider store={store}>
-        {/* <PersistGate loading={null} persistor={persistor}> */}
-        <GlobalStyles>
-            <App />
-        </GlobalStyles>
-        {/* </PersistGate> */}
+        <PersistGate loading={null} persistor={persistor}>
+            <GlobalStyles>
+                <App />
+            </GlobalStyles>
+        </PersistGate>
     </Provider>,
     // </React.StrictMode>
 );

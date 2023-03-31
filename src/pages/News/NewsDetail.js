@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useLayoutEffect, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { HiOutlineUser, HiOutlineFolderOpen, HiOutlineChatBubbleLeftRight } from 'react-icons/hi2';
 import { FaQuoteRight } from 'react-icons/fa';
 
@@ -14,6 +14,7 @@ import { newsSelector } from '~/redux/selectors';
 const cx = classNames.bind(styles);
 
 function NewsDetail() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const news = useSelector(newsSelector);
     const params = useParams();
@@ -23,7 +24,9 @@ function NewsDetail() {
     }, [news]);
 
     useEffect(() => {
+        if (!localStorage.getItem('accessToken')) navigate('/login');
         getNews(params.slug, dispatch);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params, dispatch]);
 
     useLayoutEffect(() => {
