@@ -42,7 +42,7 @@ function Contacts() {
                                     </p>
                                     <div className={cx('group-btn')}>
                                         <a
-                                            href="https://www.facebook.com/profile.php?id=100016234173663"
+                                            href="https://www.facebook.com/dduwcs.1711"
                                             className={cx('btn-social-network')}
                                             target="_blank"
                                             rel="noreferrer"

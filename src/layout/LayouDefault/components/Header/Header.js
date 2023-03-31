@@ -45,11 +45,7 @@ function Header() {
                         </a>
                     </li>
                     <li className={cx('item-social-network-tablet-mobile')}>
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100016234173663"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="https://www.facebook.com/dduwcs.1711" target="_blank" rel="noreferrer">
                             <FaFacebookSquare />
                         </a>
                     </li>
@@ -72,11 +68,7 @@ function Header() {
                             </a>
                         </li>
                         <li className={cx('item-social-network')}>
-                            <a
-                                href="https://www.facebook.com/profile.php?id=100016234173663"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
+                            <a href="https://www.facebook.com/dduwcs.1711" target="_blank" rel="noreferrer">
                                 <FaFacebook />
                             </a>
                         </li>
